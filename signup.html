@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Account</title>
+    <link rel="stylesheet" href="Styles/navBar.css" />
+    <link rel="stylesheet" href="Styles/signup.css" />
+</head>
+<body>
+    <div class="navbar"></div>
+
+    <div id="mainSignUpCont">
+        <div class="form_page">
+            <h1>Create a New Account</h1>
+            <div class="erro_div" id="errorMessage" style="display:none;">
+                <p>Error: Please check your input.</p>
+                <span class="iconify hide_erro_msg" data-icon="gridicons:cross-small" onclick="hideErrorMessage()"></span>
+            </div>
+            <form onsubmit="createAccount(event)" class="form" action="auth.php" method="POST">
+                <label for="signup_name">Name</label>
+                <input type="text" id="signup_name" placeholder="Enter Name" required />
+
+                <label for="signup_username">Username</label>
+                <input type="text" id="signup_username" placeholder="Enter Username" required />
+
+                <label for="signup_email">Email</label>
+                <input type="email" id="signup_email" placeholder="Enter Email" required />
+
+                <label for="signup_password">Password</label>
+                <input type="password" id="signup_password" placeholder="Enter Password" required />
+
+                <input type="submit" value="Create Account" id="submit" />
+            </form>
+
+            <div class="existing_acc">
+                <p>Already have an account?<a href="login.html">Sign in here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import navbar from "./components/navbar.js";
+        let DOM_nav = document.querySelector(".navbar");
+        DOM_nav.innerHTML = navbar();
+    </script>
+    <script src="Scripts/signup.js"></script>
+</body>
+</html>
+

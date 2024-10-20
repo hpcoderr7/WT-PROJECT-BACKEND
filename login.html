@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="Styles/navBar.css" />
+    <link rel="stylesheet" href="Styles/signup.css" />
+    <link rel="stylesheet" href="Styles/signin.css" />
+</head>
+<body>
+    <div class="navbar"></div>
+
+    <div id="mainSignUpCont">
+        <div class="form_page">
+            <h1>Login</h1>
+            <div class="erro_div" id="errorMessage" style="display:none;">
+                <p>Incorrect username or password.</p>
+                <span class="iconify hide_erro_msg" data-icon="gridicons:cross-small" onclick="hideErrorMessage()"></span>
+            </div>
+            <form onsubmit="login(event)" class="form">
+                <label for="login_username">Username</label>
+                <input type="text" id="login_username" placeholder="Enter Username" required />
+
+                <label for="login_password">Password</label>
+                <input type="password" id="login_password" placeholder="Enter Password" required />
+
+                <input type="submit" value="Sign in" id="submit" />
+            </form>
+
+            <div class="new_acc">
+                <p>New to the platform?<a href="signup.html">Create an Account</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import navbar from "./components/navbar.js";
+        let DOM_nav = document.querySelector(".navbar");
+        DOM_nav.innerHTML = navbar();
+    </script>
+    <script src="Scripts/login.js"></script>
+</body>
+</html>
+
